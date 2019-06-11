@@ -16,15 +16,11 @@
   </div>
 
   <div>
-    <label for="user_id">
-      User
-    </label>
-
-    <input type="text" id="user_id" name="user_id" value="<%= @daily_reflection.user_id %>">
+    <input type="hidden" id="user_id" name="user_id" value="<%= current_user %>">
   </div>
 
   <button>
-    Update daily reflection
+    Update your reflection
   </button>
 </form>
 
