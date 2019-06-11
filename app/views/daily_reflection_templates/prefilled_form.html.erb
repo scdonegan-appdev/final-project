@@ -1,0 +1,35 @@
+<h1>
+  Edit daily reflection #<%= @daily_reflection.id %>
+</h1>
+
+<hr>
+
+<%= render("daily_reflection_templates/validation_failures.html.erb") %>
+
+<form action="/update_daily_reflection_record/<%= @daily_reflection.id %>" method="post">
+  <div>
+    <label for="reflection_text">
+      Reflection text
+    </label>
+
+    <textarea id="reflection_text" name="reflection_text" rows="3"><%= @daily_reflection.reflection_text %></textarea>
+  </div>
+
+  <div>
+    <label for="user_id">
+      User
+    </label>
+
+    <input type="text" id="user_id" name="user_id" value="<%= @daily_reflection.user_id %>">
+  </div>
+
+  <button>
+    Update daily reflection
+  </button>
+</form>
+
+<hr>
+
+<a href="/daily_reflections">
+  Go back
+</a>

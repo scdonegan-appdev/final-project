@@ -1,0 +1,54 @@
+<h1>
+  Daily reflection #<%= @daily_reflection.id %> details
+</h1>
+
+<div>
+  <div>
+    <a href="/daily_reflections">
+      Go back
+    </a>
+  </div>
+
+  <div>
+    <a href="/existing_daily_reflection_form/<%= @daily_reflection.id %>">
+      Edit daily reflection
+    </a>
+  </div>
+
+  <div>
+    <a href="/delete_daily_reflection/<%= @daily_reflection.id %>">
+      Delete daily reflection
+    </a>
+  </div>
+</div>
+
+<dl>
+  <dt>
+    Reflection text
+  </dt>
+  <dd>
+    <%= @daily_reflection.reflection_text %>
+  </dd>
+
+  <dt>
+    User
+  </dt>
+  <dd>
+    <%= @daily_reflection.user_id %>
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@daily_reflection.created_at) %> ago
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@daily_reflection.updated_at) %> ago
+  </dd>
+</dl>
+

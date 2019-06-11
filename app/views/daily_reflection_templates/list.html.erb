@@ -1,0 +1,66 @@
+<h1>
+  Daily reflection list
+</h1>
+
+<a href="/new_daily_reflection_form">
+  Add a new daily reflection
+</a>
+
+<hr>
+
+<table>
+  <tr>
+    <th>
+      ID
+    </th>
+
+    <th>
+      Reflection text
+    </th>
+
+    <th>
+      User
+    </th>
+
+    <th>
+      Created at
+    </th>
+
+    <th>
+      Updated at
+    </th>
+
+    <th>
+    </th>
+  </tr>
+
+  <% @daily_reflections.each do |daily_reflection| %>
+  <tr>
+    <td>
+      <%= daily_reflection.id %>
+    </td>
+
+    <td>
+      <%= daily_reflection.reflection_text %>
+    </td>
+
+    <td>
+      <%= daily_reflection.user_id %>
+    </td>
+
+    <td>
+      <%= time_ago_in_words(daily_reflection.created_at) %> ago
+    </td>
+
+    <td>
+      <%= time_ago_in_words(daily_reflection.updated_at) %> ago
+    </td>
+
+    <td>
+      <a href="/daily_reflections/<%= daily_reflection.id %>">
+        Show details
+      </a>
+    </td>
+  </tr>
+  <% end %>
+</table>

@@ -1,0 +1,35 @@
+<h1>
+  Add a new daily reflection
+</h1>
+
+<hr>
+
+<%= render("daily_reflection_templates/validation_failures.html.erb") %>
+
+<form action="/insert_daily_reflection_record" method="post">
+  <div>
+    <label for="reflection_text">
+      Reflection text
+    </label>
+
+    <textarea id="reflection_text" name="reflection_text"><%= @daily_reflection.reflection_text %></textarea>
+  </div>
+
+  <div>
+    <label for="user_id">
+      User
+    </label>
+
+    <input type="text" id="user_id" name="user_id" value="<%= @daily_reflection.user_id %>">
+  </div>
+
+  <button>
+    Create daily reflection
+  </button>
+</form>
+
+<hr>
+
+<a href="/daily_reflections">
+  Go back
+</a>
