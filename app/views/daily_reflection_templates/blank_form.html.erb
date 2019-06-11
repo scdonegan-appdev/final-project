@@ -1,5 +1,5 @@
 <h1>
-  Add a new daily reflection
+  Welcome back, <%= current_user.name %>!
 </h1>
 
 <hr>
@@ -9,7 +9,7 @@
 <form action="/insert_daily_reflection_record" method="post">
   <div>
     <label for="reflection_text">
-      Reflection text
+      What are you hoping to remember from today?
     </label>
 
     <textarea id="reflection_text" name="reflection_text"><%= @daily_reflection.reflection_text %></textarea>

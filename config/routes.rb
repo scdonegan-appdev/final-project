@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   # Routes for the Daily reflection resource:
 
   # CREATE
+  match("/", { :controller => "daily_reflections", :action => "list", :via => "get" })
   match("/new_daily_reflection_form", { :controller => "daily_reflections", :action => "blank_form", :via => "get" })
   match("/insert_daily_reflection_record", { :controller => "daily_reflections", :action => "save_new_info", :via => "post" })
 
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
   #------------------------------
 
   devise_for :users
+  
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
