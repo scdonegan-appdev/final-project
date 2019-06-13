@@ -1,5 +1,5 @@
 <h1>
-  Edit daily reflection #<%= @daily_reflection.id %>
+  Edit Reflection from <%= @daily_reflection.updated_at.strftime("%D") %>
 </h1>
 
 <hr>
@@ -9,7 +9,7 @@
 <form action="/update_daily_reflection_record/<%= @daily_reflection.id %>" method="post">
   <div>
     <label for="reflection_text">
-      Reflection text
+      Reflection
     </label>
 
     <textarea id="reflection_text" name="reflection_text" rows="3"><%= @daily_reflection.reflection_text %></textarea>

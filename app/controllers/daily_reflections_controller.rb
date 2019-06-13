@@ -60,4 +60,5 @@ class DailyReflectionsController < ApplicationController
 
     redirect_to("/daily_reflections", { :notice => "Daily reflection deleted successfully." })
   end
+  
 end
