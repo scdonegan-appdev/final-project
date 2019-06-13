@@ -6,28 +6,30 @@
   Add a new reflection
 </a>
 
+<br>
+ 
+<a href="/users/sign_out" data-method="delete">
+  Sign out
+</a>
+
 <hr>
 
 <table>
   <tr>
     <th>
-      ID
+      #
     </th>
 
     <th>
-      Reflection text
+      Reflection
     </th>
 
     <th>
-      User
+      Created on
     </th>
 
     <th>
-      Created at
-    </th>
-
-    <th>
-      Updated at
+      Updated on
     </th>
 
     <th>
@@ -45,15 +47,11 @@
     </td>
 
     <td>
-      <%= current_user.name %>
+      <%= daily_reflection.created_at.strftime("%D") %>
     </td>
 
     <td>
-      <%= time_ago_in_words(daily_reflection.created_at) %> ago
-    </td>
-
-    <td>
-      <%= time_ago_in_words(daily_reflection.updated_at) %> ago
+      <%= daily_reflection.updated_at.strftime("%D") %>
     </td>
 
     <td>

@@ -1,5 +1,5 @@
 <h1>
-  Daily reflection #<%= @daily_reflection.id %> details
+  Reflection #<%= @daily_reflection.id %>
 </h1>
 
 <div>
@@ -11,13 +11,13 @@
 
   <div>
     <a href="/existing_daily_reflection_form/<%= @daily_reflection.id %>">
-      Edit daily reflection
+      Edit reflection
     </a>
   </div>
 
   <div>
     <a href="/delete_daily_reflection/<%= @daily_reflection.id %>">
-      Delete daily reflection
+      Delete reflection
     </a>
   </div>
 </div>
@@ -30,18 +30,22 @@
     <%= @daily_reflection.reflection_text %>
   </dd>
 
+  <br>
+  
   <dt>
-    Created at
+    Created on
   </dt>
   <dd>
-    <%= time_ago_in_words(@daily_reflection.created_at) %> ago
+    <%= @daily_reflection.created_at.strftime("%D") %>
   </dd>
 
+  <br>
+ 
   <dt>
-    Updated at
+    Updated on
   </dt>
   <dd>
-    <%= time_ago_in_words(@daily_reflection.updated_at) %> ago
+    <%= @daily_reflection.updated_at.strftime("%D") %>
   </dd>
 </dl>
 
