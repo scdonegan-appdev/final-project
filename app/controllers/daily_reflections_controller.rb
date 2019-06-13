@@ -1,6 +1,6 @@
 class DailyReflectionsController < ApplicationController
   def list
-    @daily_reflections = DailyReflection.all
+    @daily_reflections = DailyReflection.where( :user_id => current_user.id )
 
     render("daily_reflection_templates/list.html.erb")
   end

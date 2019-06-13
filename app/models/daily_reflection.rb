@@ -12,5 +12,5 @@
 class DailyReflection < ApplicationRecord
     belongs_to :user
     validates :user_id, :presence => true
-    validates :reflection_text, :presence => true
+    validates :reflection_text, :presence => { :message => "Please fill out a reflection, thank you!" } 
 end
