@@ -11,4 +11,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, :keys => [:name, :phone_number])
   end
   skip_before_action :verify_authenticity_token, raise: false
+  
+  before_action :authenticate_user!
+  
 end
